@@ -31,16 +31,16 @@ import java.util.ArrayList;
 public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.ViewHolder> {
 
     Context context;
-   // ArrayList<ModelHomeChild> modelHomeChildList;
+    // ArrayList<ModelHomeChild> modelHomeChildList;
     ArrayList<VideoHomeData> videoCategoriesDataArrayList;
     String comefrom;
     View view;
 
-   public AdapterVideoList(Context context, ArrayList<VideoHomeData> videoCategoriesDataArrayList,String comefrom) {
+    public AdapterVideoList(Context context, ArrayList<VideoHomeData> videoCategoriesDataArrayList, String comefrom) {
         this.context = context;
         this.comefrom = comefrom;
         this.videoCategoriesDataArrayList = videoCategoriesDataArrayList;
-   }
+    }
 
 
     @NonNull
@@ -48,12 +48,11 @@ public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.View
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        if(comefrom.equals("home")){
+        if (comefrom.equals("home")) {
             view = inflater.inflate(R.layout.item_rv_child_category, parent, false);
 
 
-        }
-        else {
+        } else {
             view = inflater.inflate(R.layout.item_rv_video, parent, false);
 
         }
@@ -66,36 +65,50 @@ public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.View
 
         final String childitemtittle = videoCategoriesDataArrayList.get(position).getName();
         holder.tv_childitem_tittle.setText(childitemtittle);
-        Log.d("dhshdd","dshsa"+childitemtittle);
-      //  Picasso.get().load(videoCategoriesDataArrayList.get(position).getVideo_url()).placeholder(R.drawable.placeholder).into(holder.iv_video);
+        Log.d("dhshdd", "dshsa" + childitemtittle);
+
+
+        //  Picasso.get().load(videoCategoriesDataArrayList.get(position).getVideo_url()).placeholder(R.drawable.placeholder).into(holder.iv_video);
+
+
         Glide.with(context).load(videoCategoriesDataArrayList.get(position).getImage_url()).placeholder(R.drawable.placeholder).into(holder.riv_childitemimage);
-        final String catnameid=videoCategoriesDataArrayList.get(position).getId();
+
+
+        final String catnameid = videoCategoriesDataArrayList.get(position).getId();
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(comefrom.equals("businessviewall")){
-                    Constance.ComeFrom=comefrom;
+
+                if (comefrom.equals("businessviewall")) {
+
+                    Constance.ComeFrom = comefrom;
                     Intent i = new Intent(context, ActivitySingleVideoList.class);
                     // Constance.childDataList = modelHomeChildList;
-                    i.putExtra("childitemtittle",childitemtittle);
-                    i.putExtra("catnameid",catnameid);
+                    i.putExtra("childitemtittle", childitemtittle);
+                    i.putExtra("catnameid", catnameid);
                     context.startActivity(i);
-                }
-                else {
+                } else {
 
-                    if(videoCategoriesDataArrayList.get(position).getDetail_display().equals("Yes")){
-                        if(comefrom.equals("home")){
-                            comefrom="festivalviewall";
+
+                    if (videoCategoriesDataArrayList.get(position).getDetail_display().equals("Yes")) {
+
+
+                        if (comefrom.equals("home"))
+                        {
+                            comefrom = "festivalviewall";
                         }
-                        Constance.ComeFrom=comefrom;
+
+                        Constance.ComeFrom = comefrom;
                         Intent i = new Intent(context, ActivitySingleVideoList.class);
                         // Constance.childDataList = modelHomeChildList;
-                        i.putExtra("childitemtittle",childitemtittle);
-                        i.putExtra("catnameid",catnameid);
+                        i.putExtra("childitemtittle", childitemtittle);
+                        i.putExtra("catnameid", catnameid);
                         context.startActivity(i);
-                    }
-                    else {
+                    } else
+
+                        {
+
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
                         builder.setMessage(videoCategoriesDataArrayList.get(position).getDetail_message())
                                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
@@ -130,7 +143,7 @@ public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.View
             super(itemView);
             riv_childitemimage = itemView.findViewById(R.id.riv_childitemimage);
             tv_childitem_tittle = itemView.findViewById(R.id.tv_childitem_tittle);
-           /*// ll_viewall_date = itemView.findViewById(R.id.ll_viewall_date);*/
+            /*// ll_viewall_date = itemView.findViewById(R.id.ll_viewall_date);*/
 
         }
     }

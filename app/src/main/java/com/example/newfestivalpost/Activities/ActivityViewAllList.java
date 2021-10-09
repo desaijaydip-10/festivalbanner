@@ -523,6 +523,8 @@ public class ActivityViewAllList extends AppCompatActivity {
                         if (response.body().getRecords().getData() != null && response.body().getRecords().getData().size()!=0)
                         {
                             Log.d("fdfsdkfk","dsfji"+response.body().getRecords().getData().size());
+
+
                             //Toast.makeText(context,"not null data ",Toast.LENGTH_LONG).show();
                             videoCategoriesDataArrayList.addAll(response.body().getRecords().getData());
                             adapterVideoList=new AdapterVideoList(context,videoCategoriesDataArrayList,"businessviewall");

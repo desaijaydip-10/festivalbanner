@@ -70,18 +70,26 @@ public class FragmentVideos extends Fragment {
         rv_cat_alv.setLayoutManager(new GridLayoutManager(context,3));
         ll_select_list.setVisibility(View.VISIBLE);
         getVideoFestival();
+
+
+
         ll_as_festival.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 rv_viewalllist.setVisibility(View.VISIBLE);
                 rv_cat_alv.setVisibility(View.GONE);
                 tv_as_festival.setTextColor(getResources().getColor(R.color.colorWhite));
+
+
                 tv_as_category.setTextColor(getResources().getColor(R.color.colorTheame2));
                 ll_as_festival.setBackground(getResources().getDrawable(R.drawable.roundcorner_button));
                 ll_as_category.setBackground(null);
                 getVideoFestival();
             }
         });
+
+
         ll_as_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,6 +208,8 @@ public class FragmentVideos extends Fragment {
     }
 
     public void getVideoFestival() {
+
+
         videoCategoriesDataArrayList.clear();
         Api api = Base_Url.getClient().create(Api.class);
         ProgressDialog progressDialog;
@@ -216,12 +226,22 @@ public class FragmentVideos extends Fragment {
                 if (response.body().getResult().equals("1") || response.body().getResult() != null) {
                     if (response.body().getRecords() != null) {
                         if (response.body().getRecords().getData() != null && response.body().getRecords().getData().size() != 0) {
+
+
                             Log.d("fdfsdkfk", "dsfji" + response.body().getRecords().getData().size());
+
+
                             //Toast.makeText(context,"not null data ",Toast.LENGTH_LONG).show();
+
+
+
                             videoCategoriesDataArrayList.addAll(response.body().getRecords().getData());
                             adapterVideoList = new AdapterVideoList(context, videoCategoriesDataArrayList, "festivalviewall");
+
+
                             rv_viewalllist.setVisibility(View.VISIBLE);
                             rv_viewalllist.setAdapter(adapterVideoList);
+
                             progressDialog.dismiss();
                         } else {
 
@@ -247,6 +267,7 @@ public class FragmentVideos extends Fragment {
 
 
                     } else {
+
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
                         builder.setMessage("getrecord null" + response.body().getMessage())
                                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {

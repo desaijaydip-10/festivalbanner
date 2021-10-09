@@ -8,8 +8,7 @@
         android:id="@+id/ll_select_list"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:background="#e5e5e5"
-        android:visibility="gone">
+        android:background="#e5e5e5">
 
         <LinearLayout
             android:id="@+id/ll_as_festival"

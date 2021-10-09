@@ -146,6 +146,7 @@ public class ActivitySingleVideoList extends AppCompatActivity {
         catnameid = getIntent().getExtras().getString("catnameid");
 
         tv_singlevideocatname.setText(childitemtittle);
+
         rv_singlevideoitems.setLayoutManager(new GridLayoutManager(context, 3));
 
       /*  frameListAdepter = new FrameListAdepter(context, arrayList);
@@ -157,6 +158,7 @@ public class ActivitySingleVideoList extends AppCompatActivity {
 
 
         videoCategoriesDataArrayList = new ArrayList<>();
+
 
         iv_al_language.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,6 +179,7 @@ public class ActivitySingleVideoList extends AppCompatActivity {
         });
 
         if (Constance.ComeFrom.equals("festivalviewall")) {
+
             Log.d("dfdfsfd", "dfdfsfd1");
             getFestivalvideolist();
         } else {
