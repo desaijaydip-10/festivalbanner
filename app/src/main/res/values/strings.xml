@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Banner Maker</string>
+
+    <string name="interstitial_full_screen">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_home_footer">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="facebook_banner_id">590352208175905_590352491509210</string>
+    <string name="facebook_interstitial_Ad">590352208175905_590353074842485</string>
+
+    <string name="file_provider_authority" translatable="false">com.festivalbanner.bannermaker.fileprovider</string>
+
+
+    <string name="create_custom">Custom Frame</string>
+    <string name="Tap_Chosse">Select logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "889174759005",
+    "project_id": "cenko-evepar-97bca",
+    "storage_bucket": "cenko-evepar-97bca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889174759005:android:d99ae457b14918d5ae5fb4",
+        "android_client_info": {
+          "package_name": "com.festivalbanner.bannermaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889174759005-s1qmpv31tt2vovgh0ns6p9t4pt201imo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcL27GDLqE5MiCY4J6WSYDH-tTb0rGDI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889174759005-s1qmpv31tt2vovgh0ns6p9t4pt201imo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

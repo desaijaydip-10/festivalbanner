@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ActivitySingleCategoyList">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/gradientbackgroundtheme"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_backarrow"
+                android:src="@drawable/back_arrow"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="category name"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_backarrow"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:id="@+id/tv_singlecatname"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorWhite"/>
+
+            <ImageView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_centerVertical="true"
+                android:id="@+id/iv_al_language"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/_100sdp"
+                android:src="@drawable/language_icon"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"/>
+            <LinearLayout
+                android:id="@+id/ll_next_singlecatlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/round_view_whiteborder"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NEXT"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18dp"
+
+                    >
+                </TextView>
+                <ImageView
+                    android:id="@+id/iv_nextarrow"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_rightarrow"
+                    >
+                </ImageView>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/ll_selectedimageview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_firstimage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/demo"
+                android:scaleType="centerCrop">
+
+            </ImageView>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="@color/colorLightGrey2"
+            android:layout_marginTop="3dp">
+
+        </ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="6dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:id="@+id/rv_singlecatlist">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/facbook_ad_banner"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            </LinearLayout>
+
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_home_footer" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

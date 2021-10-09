@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGrey3"
+    android:orientation="vertical"
+    tools:context=".Activities.ActivitySignIn">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/ll_"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/carter_one"
+            android:text="WELCOME TO"
+            android:textColor="@color/colorTheame"
+            android:textSize="24dp"
+            android:textStyle="bold">
+
+        </TextView>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/app_icon"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/carter_one"
+            android:text="@string/app_name"
+            android:textColor="@color/colorTheame"
+            android:textSize="24dp"
+            android:textStyle="bold"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/ll_"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:elevation="4dp"
+            android:background="@drawable/roundcorner_planwhitebg">
+            <EditText
+                android:id="@+id/et_otp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="Enter OTP"
+                android:inputType="textEmailAddress"
+                android:isScrollContainer="true"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorLightGrey"
+                android:textSize="18dp" />
+            <!--    <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email "
+                    android:padding="20dp"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorBlack" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_submit_btn"
+            android:onClick="onClickSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/roundcorner_button"
+            android:layout_gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/finish_businness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Submit"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.PremiumPreview">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/premium_image"
+        android:layout_marginBottom="@dimen/_80sdp"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_whatsapp_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/roundcorner_button"
+        android:layout_gravity="right"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/finish_businness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Whats App"
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+    </LinearLayout>
+
+</RelativeLayout>

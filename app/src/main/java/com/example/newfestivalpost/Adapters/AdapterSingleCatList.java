@@ -1,0 +1,88 @@
+package com.example.newfestivalpost.Adapters;
+
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.newfestivalpost.Activities.ActivitySingleCategoyList;
+import com.example.newfestivalpost.Model.ModelHomeChild;
+import com.example.newfestivalpost.ModelRetrofit.CategoriesData;
+import com.example.newfestivalpost.R;
+import com.makeramen.roundedimageview.RoundedImageView;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
+public class AdapterSingleCatList extends RecyclerView.Adapter<AdapterSingleCatList.ViewHolder> {
+
+    Context context;
+   // ArrayList<ModelHomeChild> modelHomeChildList;
+    ArrayList<CategoriesData> modelHomeChildList;
+
+    View view;
+    private int mCheckIndex = 0;
+
+    public AdapterSingleCatList(Context context, ArrayList<CategoriesData> modelHomeChildList) {
+        this.context = context;
+        this.modelHomeChildList = modelHomeChildList;
+    }/*public AdapterSingleCatList(Context context, ArrayList<ModelHomeChild> modelHomeChildList) {
+        this.context = context;
+        this.modelHomeChildList = modelHomeChildList;
+    }*/
+
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        view = inflater.inflate(R.layout.item_rv_singlecatlist, parent, false);
+        ViewHolder holder = new ViewHolder(view);
+        return holder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+
+     //   Picasso.get().load(modelHomeChildList.get(position).getChilditemimage()).placeholder(R.drawable.placeholder).into(holder.iv_singlecatlistitem);
+        Picasso.get().load(modelHomeChildList.get(position).getImage_url()).placeholder(R.drawable.placeholder).into(holder.riv_singlecatlistitem);
+        holder.ll_folder_check.setVisibility(mCheckIndex == position ? View.VISIBLE : View.GONE);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCheckIndex = position;
+                ActivitySingleCategoyList.getInstance().setselectedimage(modelHomeChildList.get(position).getImage_url());
+                ActivitySingleCategoyList.getInstance().adapterSingleCatList.notifyDataSetChanged();
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return modelHomeChildList.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        RoundedImageView riv_singlecatlistitem;
+        LinearLayout ll_folder_check;
+
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            riv_singlecatlistitem = itemView.findViewById(R.id.riv_singlecatlistitem);
+            ll_folder_check = itemView.findViewById(R.id.ll_folder_check);
+
+
+        }
+    }
+
+
+}
